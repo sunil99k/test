@@ -1,0 +1,259 @@
+{
+    "id": "bahmni.clinical",
+    "extensionPoints": [
+        {
+            "id": "org.bahmni.clinical.consultation.board",
+            "description": "Bahmni Clinical Consultation Page"
+        },
+        {
+            "id": "org.bahmni.clinical.conceptSetGroup.*",
+            "description": "Define conceptsets part of a conceptset group"
+        },
+        {
+            "id": "org.bahmni.clinical.orders",
+            "description": "Bahmni Orders Page"
+        },
+        {
+            "id": "org.bahmni.patient.search",
+            "description": "Bahmni Patient search, lookups Page"
+        }
+    ],
+    "contextModel": [
+        "patientUuid",
+        "visitUuid"
+    ],
+    "config": {
+        "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
+        "quickPrints":false,
+        "networkConnectivity" : {
+            "showNetworkStatusMessage": false,
+            "networkStatusCheckInterval": 20000,
+            "locales" : [
+                { "locale" : "fr", "css" : "offline-language-french"},
+                { "locale" : "es", "css": "offline-language-spanish"},
+                { "locale" : "pt", "css": "offline-language-portuguese-brazil"}
+            ]
+        },
+    	"diagnosisStatus": "Inactive",
+            "program": {
+                "patientInformation": {
+                    "ageLimit": 100
+                }
+            },
+            "patientContext": {
+        		"programAttributes": [
+            		"Id_Number",
+            		"Doctor",
+            		"Stage"
+        		],
+        		"personAttributes": [
+            		"class",
+            		"caste"
+        		],
+        		"additionalPatientIdentifiers": [
+           			"National ID"
+       		],
+        		"preferredIdentifier": "Id_Number"
+    	},
+	"obsIgnoreList": [
+            "REGISTRATION FEES",
+            "COMMENTS",
+            "Patient file"
+        ],
+        "otherInvestigationsMap": {
+            "Radiology": "Radiology Order",
+            "Endoscopy": "Endoscopy Order"
+        },
+        "allowConsultationWhenNoOpenVisit": false,
+        "defaultVisitType": "OPD",
+        "visitTypeForRetrospectiveEntries": "Special OPD",
+        "maxConceptSetLevels": 3,
+        "allowOnlyCodedDiagnosis": false,
+        "conceptSetUI": {
+            "Chief Complaint Data": {
+                "autocomplete":true,
+                "codedConceptName":"Chief Complaint",
+                "nonCodedConceptName":"Non-Coded Chief Complaint",
+                "durationRequired": false,
+                "allowAddMore": true
+            },
+            "Tuberculosis, Adverse Effects" :{
+                "multiSelect" : true,
+                "autocomplete" : true
+            },
+            "Posture": {
+                "buttonSelect": true
+            },
+            "P/A Presenting Part": {
+                "multiSelect": true
+            },
+            "FHS": {
+                "buttonSelect": true
+            },
+            "P/S (Per Speculum) - Cervix": {
+                "grid": true
+            },
+            "Anaemia, Stopped Since When": {
+                "conciseText": true
+            },
+            "Examination Notes": {
+                "conciseText": true
+            },
+            "Set1": {
+                "allowAddMore": true
+            },
+            "Set2": {
+                "allowAddMore": true
+            },
+
+	    "Under5_Danger_Signs" : {
+		"multiSelect" : true,
+		"required" : true
+	    },
+	    "under5_Cough" : {
+		"required" : true
+	    },
+	   
+	    "Does the child have diarrhea" : {
+		"required" : true
+	    },
+	    "Does the child have fever" : {
+		"required" : true
+	    },
+
+	    "Serious Malnutrition ( WHZ <- 3 SD ) " : {
+		"required" : true
+	    },
+
+	    "See fade of the palm" : {
+		"required" : true
+	    },
+
+	     "See the child's general condition" : {
+		 "multiSelect" : true
+	    },
+
+	    "IF Yes Then What" : {
+		 "conciseText": true
+	    },
+
+	    "Quantity Of Feeding" : {
+		 "conciseText": true
+	    },
+
+	    "breathingRate" : {
+		"maxLength" : 3
+	    },
+
+
+	    "PNCM_breasts_check" : {
+		"multiSelect": true
+	    },
+
+	    "2MInfant_Which Tieke are given": {
+		"conciseText": true
+	    },
+
+	    "2MInfant_What is given for drinking": {
+		"conciseText":true
+	    },
+	    "2MInfant_Which Tieke are given": {
+		 "conciseText":true
+	    },
+	    
+	    "2MInfant_Vaccination check": {
+		 "multiSelect": true	 
+	    },
+
+	    "GLOBAL_Name_of_nurse_or_SHW_hindi" : {
+		"dropdown": true
+	    },
+
+
+	    "ADULTCaseSheet_Add more": {
+		 "conciseText":true
+	    },
+	     "ADULTCaseSheet-Others": {
+                 "conciseText":true
+            },
+	    "ADULTCaseSheet_Case seen by_Doctor's name": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Case seen by_Nurse's name": {
+                 "dropdown": true
+            },
+	    "ADULTCaseSheet_Location": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Abdomen_If tender, location": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_If swelling location": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_movement location": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Skin_Types": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Genitals": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Eye": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Vision": {
+		 "dropdown": true
+	    },
+	    "ADULTCaseSheet_Breast":  {
+                 "dropdown": true
+            },
+            "ADULTCaseSheet_P/S":  {
+                 "dropdown": true
+            },
+            "ADULTCaseSheet_Discharge":  {
+                 "dropdown": true
+            },
+            "ADULTCaseSheet_P.V":  {
+                 "dropdown": true
+            },
+            "ADULTCaseSheet_Injury site":  {
+                 "dropdown": true
+            },
+
+
+
+	    "Coded3": {
+                "multiSelect": true
+            },
+            "Image": {
+                "allowAddMore": true
+            },
+            "Gynaecology, Gravida": {
+                "stepper": true
+            },
+            "Accepted Family Planning methods": {
+                "seSheet_Breast":  {
+                 "dropdown": true
+            	}
+	    },
+            "defaults": {
+                "Number of living children": 1,
+                "Accepted Family Planning methods": [
+                    "Condoms",
+                    "Pills"
+                ],
+                "Pain management given": true,
+                "Safe Abortion, Remarks": "Remarks",
+                "Malaria, Death Date": "2015-12-01",
+		"ADULTCaseSheet_Past history_LMP": "2017-09-01"
+            }
+        },
+        "visitPage": {
+            "observationDisplay": {
+                "conceptNames": []
+            }
+        }
+    }
+}
